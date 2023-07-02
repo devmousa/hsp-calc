@@ -109,7 +109,7 @@ const Scientific = () => {
             subjectEnglishName="TwoSemesters"
             subject="مجموع الفترتين"
             max={384}
-            sumOfSemesters={true}
+            sumOfSemesters
           />
           <SubjectInput
             register={register('IslamicEducation')}
@@ -134,7 +134,7 @@ const Scientific = () => {
             subjectEnglishName="Expression"
             subject="التعبير"
             max={24}
-            expressionsSubject={true}
+            another
           />
           <SubjectInput
             register={register('EnglishLanguage')}

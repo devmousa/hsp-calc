@@ -106,7 +106,7 @@ const Literary = () => {
             subjectEnglishName="TwoSemesters"
             subject="مجموع الفترتين"
             max={372}
-            sumOfSemesters={true}
+            sumOfSemesters
           />
           <SubjectInput
             register={register('IslamicEducation')}
@@ -137,7 +137,7 @@ const Literary = () => {
             subjectEnglishName="Expression"
             subject="الإنشاء"
             max={20}
-            expressionsSubject={true}
+            another
           />
           <SubjectInput
             register={register('EnglishLanguage')}

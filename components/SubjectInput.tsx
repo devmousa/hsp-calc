@@ -6,7 +6,7 @@ interface ISubjectInput {
   register: any
   max: number
   sumOfSemesters?: boolean
-  expressionsSubject?: boolean
+  another?: boolean
 }
 
 export default function SubjectInput({
@@ -15,7 +15,7 @@ export default function SubjectInput({
   register,
   max,
   sumOfSemesters,
-  expressionsSubject,
+  another,
 }: ISubjectInput) {
   return (
     <div className="md:basis-[calc(100%/3-1rem)] basis-full flex flex-row flex-nowrap md:whitespace-normal whitespace-pre md:text-base text-sm border border-black">
@@ -34,8 +34,8 @@ export default function SubjectInput({
         placeholder={
           sumOfSemesters
             ? 'مجموع درجات الفترتين'
-            : expressionsSubject
-            ? 'درجة التعبير'
+            : another
+            ? `درجة ${subject}`
             : 'عدد الأسئلة التي تمت إجابتها'
         }
         className="md:basis-2/3 basis-1/2 p-4 text-center outline-none"
