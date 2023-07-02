@@ -11,7 +11,8 @@ import { Appreciation } from '../../utils/Appreciation'
 interface ISubjects {
   TwoSemesters: number
   IslamicEducation: number
-  ArabicLanguage: number
+  Syntax: number
+  ReadingAndTexts: number
   Writing: number
   EnglishLanguage: number
   Computer: number
@@ -32,7 +33,8 @@ const Scientific = () => {
 
     sumOfDegrees += Ceil(event.TwoSemesters) | 0
     sumOfDegrees += Ceil((event.IslamicEducation / 48) * 56) | 0
-    sumOfDegrees += Ceil((event.ArabicLanguage / 60) * 112) | 0
+    sumOfDegrees += Ceil((event.Syntax / 60) * 46) | 0
+    sumOfDegrees += Ceil((event.ReadingAndTexts / 60) * 66) | 0
     sumOfDegrees += Ceil(event.Writing) | 0
     sumOfDegrees += Ceil((event.EnglishLanguage / 60) * 112) | 0
     sumOfDegrees += Ceil(event.Computer) | 0
@@ -42,15 +44,24 @@ const Scientific = () => {
     sumOfDegrees += Ceil((event.Geography / 48) * 56) | 0
     percentage = parseFloat(((sumOfDegrees / 1120) * 100).toFixed(3))
 
-    event.IslamicEducation < 24 ? fail.push('التربية الإسلامية') : ''
-    event.ArabicLanguage < 30 ? fail.push('اللغة العربية') : ''
-    event.Writing < 28 ? fail.push('الكتابة') : ''
-    event.EnglishLanguage < 30 ? fail.push('اللغة الإنجليزية') : ''
-    event.Computer < 28 ? fail.push('الحاسوب') : ''
-    event.Mathematics < 30 ? fail.push('الرياضيات') : ''
-    event.Science < 30 ? fail.push('العلوم') : ''
-    event.History < 24 ? fail.push('التاريخ') : ''
-    event.Geography < 24 ? fail.push('الجغرافيا') : ''
+    event.IslamicEducation < 19 ? fail.push('التربية الإسلامية') : ''
+    if ((event.Syntax / 60) * 46 + (event.ReadingAndTexts / 60) * 66 + event.Writing < 67){
+      if (event.Syntax < 24){
+        fail.push("النحو")
+      }
+      if (event.ReadingAndTexts < 24){
+        fail.push("القراءة و النصوص")
+      }
+      if (event.Writing < 22){
+        fail.push("الكتابة")
+      }
+    }
+    event.EnglishLanguage < 24 ? fail.push('اللغة الإنجليزية') : ''
+    event.Computer < 22 ? fail.push('الحاسوب') : ''
+    event.Mathematics < 24 ? fail.push('الرياضيات') : ''
+    event.Science < 24 ? fail.push('العلوم') : ''
+    event.History < 19 ? fail.push('التاريخ') : ''
+    event.Geography < 19 ? fail.push('الجغرافيا') : ''
 
     if (isNaN(percentage)) {
       percentage = 0
@@ -87,9 +98,15 @@ const Scientific = () => {
             max={48}
           />
           <SubjectInput
-            register={register('ArabicLanguage')}
-            subjectEnglishName="ArabicLanguage"
-            subject="اللغة العربية"
+            register={register('Syntax')}
+            subjectEnglishName="Syntax"
+            subject="النحو"
+            max={60}
+          />
+          <SubjectInput
+            register={register('ReadingAndTexts')}
+            subjectEnglishName="ReadingAndTexts"
+            subject="القراءة و النصوص"
             max={60}
           />
           <SubjectInput
