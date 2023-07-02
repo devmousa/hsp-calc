@@ -46,7 +46,7 @@ const Scientific = () => {
     event.ArabicLanguage < 30 ? fail.push('اللغة العربية') : ''
     event.Writing < 28 ? fail.push('الكتابة') : ''
     event.EnglishLanguage < 30 ? fail.push('اللغة الإنجليزية') : ''
-    event.Computer < 24 ? fail.push('الحاسوب') : ''
+    event.Computer < 28 ? fail.push('الحاسوب') : ''
     event.Mathematics < 30 ? fail.push('الرياضيات') : ''
     event.Science < 30 ? fail.push('العلوم') : ''
     event.History < 24 ? fail.push('التاريخ') : ''
