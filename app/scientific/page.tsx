@@ -70,7 +70,7 @@ const Scientific = () => {
     event.Mathematics < 28 ? fail.push('الرياضيات') : ''
     event.Statistics < 28 ? fail.push('الإحصاء') : ''
     if (
-      (event.ElectricalPhysics / 56) * 84 + (event.MechanicsPhysics / 56) * 56 <
+      Ceil((event.ElectricalPhysics / 56) * 84 + (event.MechanicsPhysics / 56) * 56) <
       70
     ) {
       if (event.ElectricalPhysics < 28) {

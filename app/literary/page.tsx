@@ -52,10 +52,10 @@ const Literary = () => {
 
     event.IslamicEducation < 28 ? fail.push('التربية الإسلامية') : ''
     if (
-      (event.LinguisticStudies / 39) * 78 +
+      Ceil((event.LinguisticStudies / 39) * 78 +
         (event.LiteraryStudies / 48) * 53 +
         (event.ReadingAndLiteraryCriticism / 44) * 45 +
-        (event.Expression / 1) <
+        (event.Expression / 1)) <
       98
     ) {
       if (event.LinguisticStudies < 20) {
