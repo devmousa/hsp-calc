@@ -2,6 +2,7 @@
 
 import './globals.css'
 import { Inter } from 'next/font/google'
+import { useEffect } from 'react'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -14,6 +15,19 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  useEffect(() => {
+    const incrementVisitor = async () => {
+      try {
+        await fetch('https://hsp-calc.group.com.ly/visitor/pulse', {
+          method: 'POST',
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    incrementVisitor();
+  }, []);
   return (
     <html lang="ar" dir="rtl">
       <head>
