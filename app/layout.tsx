@@ -19,7 +19,7 @@ export default function RootLayout({
       <head>
         <title>حساب نسبة الشهادة الثانوية</title>
       </head>
-      <body className={`${inter.className} bg-amber-100`}>
+      <body className={`${inter.className} bg-sky-100`}>
         <HomeButton />
         <Header />
         {children}

@@ -18,10 +18,10 @@ export default function SubjectInput({
   another,
 }: ISubjectInput) {
   return (
-    <div className="md:basis-[calc(100%/3-1rem)] basis-full flex flex-row flex-nowrap md:whitespace-normal whitespace-pre md:text-base text-sm border border-black">
+    <div className="md:basis-[calc(100%/3-1rem)] basis-full flex flex-row flex-nowrap md:whitespace-normal whitespace-pre md:text-base text-sm border border-black even:bg-sky-400 odd:bg-sky-500">
       <label
         htmlFor={subjectEnglishName}
-        className="md:basis-1/3 basis-1/2 py-4 text-center bg-yellow-400"
+        className="md:basis-1/3 basis-1/2 py-4 text-center bg-transparent text-white font-semibold"
       >
         {subject}
       </label>

@@ -33,9 +33,9 @@ const Scientific = () => {
 
     sumOfDegrees += Ceil(event.TwoSemesters) | 0
     sumOfDegrees += Ceil((event.IslamicEducation / 48) * 56) | 0
-    sumOfDegrees += Ceil((event.Syntax / 60) * 46) | 0
-    sumOfDegrees += Ceil((event.ReadingAndTexts / 60) * 66) | 0
-    sumOfDegrees += Ceil(event.Writing) | 0
+    sumOfDegrees += Ceil((event.Syntax / 48) * 46) | 0
+    sumOfDegrees += Ceil((event.ReadingAndTexts / 48) * 66) | 0
+    sumOfDegrees += Ceil(event.Writing / 1) | 0
     sumOfDegrees += Ceil((event.EnglishLanguage / 60) * 112) | 0
     sumOfDegrees += Ceil(event.Computer) | 0
     sumOfDegrees += Ceil((event.Mathematics / 60) * 140) | 0
@@ -45,17 +45,15 @@ const Scientific = () => {
     percentage = parseFloat(((sumOfDegrees / 1120) * 100).toFixed(3))
 
     event.IslamicEducation < 19 ? fail.push('التربية الإسلامية') : ''
-    if ((event.Syntax / 60) * 46 + (event.ReadingAndTexts / 60) * 66 + event.Writing < 67){
-      if (event.Syntax < 24){
+    if ((event.Syntax / 48) * 46 + (event.ReadingAndTexts / 48) * 66 < 44){
+      if (event.Syntax < 19){
         fail.push("النحو")
       }
-      if (event.ReadingAndTexts < 24){
+      if (event.ReadingAndTexts < 19){
         fail.push("القراءة و النصوص")
       }
-      if (event.Writing < 22){
-        fail.push("الكتابة")
-      }
     }
+    event.Writing < 22 ? fail.push("الكتابة") : ""
     event.EnglishLanguage < 24 ? fail.push('اللغة الإنجليزية') : ''
     event.Computer < 22 ? fail.push('الحاسوب') : ''
     event.Mathematics < 24 ? fail.push('الرياضيات') : ''

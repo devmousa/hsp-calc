@@ -34,54 +34,54 @@ const Scientific = () => {
     let failFooter = ''
 
     sumOfDegrees += Ceil(event.TwoSemesters) | 0
-    sumOfDegrees += Ceil((event.IslamicEducation / 48) * 56) | 0
-    sumOfDegrees += Ceil((event.LinguisticStudies / 48) * 44) | 0
-    sumOfDegrees += Ceil((event.LiteraryStudies / 48) * 44) | 0
-    sumOfDegrees += Ceil(event.Expression) | 0
-    sumOfDegrees += Ceil((event.EnglishLanguage / 60) * 112) | 0
-    sumOfDegrees += Ceil((event.InformationTechnology / 48) * 56) | 0
-    sumOfDegrees += Ceil((event.Mathematics / 60) * 140) | 0
-    sumOfDegrees += Ceil((event.Statistics / 48) * 56) | 0
-    sumOfDegrees += Ceil((event.ElectricalPhysics / 60) * 84) | 0
-    sumOfDegrees += Ceil((event.MechanicsPhysics / 60) * 56) | 0
-    sumOfDegrees += Ceil((event.Chemistry / 60) * 112) | 0
-    sumOfDegrees += Ceil((event.Biology / 60) * 112) | 0
+    sumOfDegrees += Ceil((event.IslamicEducation / 56) * 56) | 0
+    sumOfDegrees += Ceil((event.LinguisticStudies / 44) * 44) | 0
+    sumOfDegrees += Ceil((event.LiteraryStudies / 44) * 44) | 0
+    sumOfDegrees += Ceil(event.Expression / 1) | 0
+    sumOfDegrees += Ceil((event.EnglishLanguage / 56) * 112) | 0
+    sumOfDegrees += Ceil((event.InformationTechnology / 56) * 56) | 0
+    sumOfDegrees += Ceil((event.Mathematics / 56) * 140) | 0
+    sumOfDegrees += Ceil((event.Statistics / 56) * 56) | 0
+    sumOfDegrees += Ceil((event.ElectricalPhysics / 56) * 84) | 0
+    sumOfDegrees += Ceil((event.MechanicsPhysics / 56) * 56) | 0
+    sumOfDegrees += Ceil((event.Chemistry / 56) * 112) | 0
+    sumOfDegrees += Ceil((event.Biology / 56) * 112) | 0
     percentage = parseFloat(((sumOfDegrees / 1280) * 100).toFixed(3))
 
-    event.IslamicEducation < 24 ? fail.push('التربية الإسلامية') : ''
+    event.IslamicEducation < 28 ? fail.push('التربية الإسلامية') : ''
     if (
-      (event.LinguisticStudies / 48) * 44 +
-        (event.LiteraryStudies / 48) * 44 +
-        event.Expression <
+      ((event.LinguisticStudies / 44) * 44 +
+        (event.LiteraryStudies / 44) * 44 +
+        event.Expression / 1) <
       56
     ) {
-      if (event.LinguisticStudies < 24) {
+      if (event.LinguisticStudies < 22) {
         fail.push('الدراسات اللغوية')
       }
-      if (event.LiteraryStudies < 24) {
+      if (event.LiteraryStudies < 22) {
         fail.push('الدراسات الأدبية')
       }
       if (event.Expression < 12) {
         fail.push('التعبير')
       }
     }
-    event.EnglishLanguage < 30 ? fail.push('اللغة الإنجليزية') : ''
-    event.InformationTechnology < 24 ? fail.push('تقنية المعلومات') : ''
-    event.Mathematics < 30 ? fail.push('الرياضيات') : ''
-    event.Statistics < 24 ? fail.push('الإحصاء') : ''
+    event.EnglishLanguage < 28 ? fail.push('اللغة الإنجليزية') : ''
+    event.InformationTechnology < 28 ? fail.push('تقنية المعلومات') : ''
+    event.Mathematics < 28 ? fail.push('الرياضيات') : ''
+    event.Statistics < 28 ? fail.push('الإحصاء') : ''
     if (
-      (event.ElectricalPhysics / 60) * 84 + (event.MechanicsPhysics / 60) * 56 <
+      (event.ElectricalPhysics / 56) * 84 + (event.MechanicsPhysics / 56) * 56 <
       70
     ) {
-      if (event.ElectricalPhysics < 30) {
+      if (event.ElectricalPhysics < 28) {
         fail.push('الفيزياء الكهربائية')
       }
-      if (event.MechanicsPhysics < 30) {
+      if (event.MechanicsPhysics < 28) {
         fail.push('الفيزياء الميكانيكا')
       }
     }
-    event.Chemistry < 30 ? fail.push('الكيمياء') : ''
-    event.Biology < 30 ? fail.push('الأحياء') : ''
+    event.Chemistry < 28 ? fail.push('الكيمياء') : ''
+    event.Biology < 28 ? fail.push('الأحياء') : ''
 
     if (isNaN(percentage)) {
       percentage = 0
@@ -115,19 +115,19 @@ const Scientific = () => {
             register={register('IslamicEducation')}
             subjectEnglishName="IslamicEducation"
             subject="التربية الإسلامية"
-            max={48}
+            max={56}
           />
           <SubjectInput
             register={register('LinguisticStudies')}
             subjectEnglishName="LinguisticStudies"
             subject="الدراسات اللغوية"
-            max={48}
+            max={44}
           />
           <SubjectInput
             register={register('LiteraryStudies')}
             subjectEnglishName="LiteraryStudies"
             subject="الدراسات الأدبية"
-            max={48}
+            max={44}
           />
           <SubjectInput
             register={register('Expression')}
@@ -140,54 +140,54 @@ const Scientific = () => {
             register={register('EnglishLanguage')}
             subjectEnglishName="EnglishLanguage"
             subject="اللغة الإنجليزية"
-            max={60}
+            max={56}
           />
           <SubjectInput
             register={register('InformationTechnology')}
             subjectEnglishName="InformationTechnology"
             subject="تقنية المعلومات"
-            max={48}
+            max={56}
           />
           <SubjectInput
             register={register('Mathematics')}
             subjectEnglishName="Mathematics"
             subject="الرياضيات"
-            max={60}
+            max={56}
           />
           <SubjectInput
             register={register('Statistics')}
             subjectEnglishName="Statistics"
             subject="الإحصاء"
-            max={48}
+            max={56}
           />
           <SubjectInput
             register={register('ElectricalPhysics')}
             subjectEnglishName="ElectricalPhysics"
             subject="الفيزياء الكهربائية"
-            max={60}
+            max={56}
           />
           <SubjectInput
             register={register('MechanicsPhysics')}
             subjectEnglishName="MechanicsPhysics"
             subject="الميكانيكا"
-            max={60}
+            max={56}
           />
           <SubjectInput
             register={register('Chemistry')}
             subjectEnglishName="Chemistry"
             subject="الكيمياء"
-            max={60}
+            max={56}
           />
           <SubjectInput
             register={register('Biology')}
             subjectEnglishName="Biology"
             subject="الأحياء"
-            max={60}
+            max={56}
           />
         </div>
         <button
           type="submit"
-          className="p-4 m-8 block mx-auto rounded-lg bg-yellow-300 hover:bg-yellow-400 border border-yellow-900"
+          className="p-4 m-8 block mx-auto rounded-lg text-white font-bold bg-blue-500 hover:bg-blue-600  border border-yellow-900"
         >
           احسب النسبة
         </button>
